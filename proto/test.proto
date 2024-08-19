@@ -1,0 +1,35 @@
+syntax = "proto3"; 
+
+package test;
+
+service TestResponse{ 
+    rpc Add(AddRequest) returns (AddResponse) {}
+    rpc Decode(DecodeRequest) returns (DecodeResponse){}
+    rpc FaceDetect(FaceDetectRequest) returns (FaceDetectResponse){}
+}
+
+message AddRequest{ 
+    int32 num1 = 1; 
+    int32 num2 = 2; 
+
+}
+
+message AddResponse{ 
+    int32 result = 1;
+}
+
+message DecodeRequest{ 
+    string ImgData = 1; 
+}
+message DecodeResponse{ 
+    string file_path = 1;
+    string Timestamp = 2;
+}
+message FaceDetectRequest{ 
+    string ImgData = 1; 
+    string TrxID = 2;
+}
+message FaceDetectResponse{ 
+    string TrxID = 1; 
+    string Embeddings = 2;
+}

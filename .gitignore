@@ -1,0 +1,4 @@
+.venv/
+AgeDB/
+cleaned_output_full.csv
+feature_extractor/model/backbone_ir50_ms1m_epoch120.pth
