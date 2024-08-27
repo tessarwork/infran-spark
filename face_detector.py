@@ -48,7 +48,7 @@ def face_alignment(image_data):
         img_warp.save(buffered, format="JPEG")
         img_str = base64.b64encode(buffered.getvalue())
 
-    return img_str
+    return landmarks
 
 
     
