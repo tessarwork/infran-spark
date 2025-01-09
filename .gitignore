@@ -5,3 +5,4 @@ feature_extractor/model/backbone_ir50_ms1m_epoch120.pth
 cleaned_output_fullagedb.csv
 cleaned_output_full_model_baru.csv
 output_with_vertical_similarity_fulllfw_clean.csv
+infranlib/
