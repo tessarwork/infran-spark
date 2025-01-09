@@ -14,7 +14,7 @@ import logging
 from feature_extractor.embeddings import get_embedding
 from feature_extractor.backbone import Backbone
 
-model_path = "/Users/taufiq/infran-spark/feature_extractor/model/backbone_ir50_ms1m_epoch120.pth"
+model_path = "/Users/taufiq/workspace/infran-spark/feature_extractor/model/backbone_ir50_ms1m_epoch120.pth"
 input_size = [112, 112]
 device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 device = torch.device("cpu")
@@ -27,7 +27,8 @@ backbone.eval()
 transform  = transforms.Compose(
     [
         transforms.Resize([int(128 * input_size[0] / input_size[1]), int(128 * input_size[0] / input_size[1])]), 
-        transforms.CenterCrop([input_size[0], input_size[1]]), 
+        transforms.RandomCrop([input_size[0], input_size[1]]), 
+        transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
     ], 
